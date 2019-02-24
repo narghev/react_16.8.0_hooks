@@ -1,28 +1,34 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import {
+  State,
+  Title,
+  Context
+} from './examples';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+import {
+  Memo
+} from './newish_features';
+
+const App = () => {
+
+  const [foo, bar] = useState(0);
+
+
+  return (
+    <>
+      {/* <State /> */}
+      {/* <Title title="TEST" /> */}
+      {/* <Context /> */}
+      <>
+        <Memo />
+        <button onClick={() => bar(foo + 1)}>Click</button>
+      </>
+    </>
+  );
+};
+
+/*
+baglabelprinting
+*/
 
 export default App;
